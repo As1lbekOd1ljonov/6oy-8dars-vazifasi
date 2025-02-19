@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+
+{% block main %}
+<div class="container mt-4 text-center">
+    <h2 class="text-danger">Ushbu darsni o‘chirishni istaysizmi?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Ha, o‘chirish</button>
+        <a href="{% url 'index' %}" class="btn btn-secondary">Bekor qilish</a>
+    </form>
+</div>
+
+{% endblock main %}

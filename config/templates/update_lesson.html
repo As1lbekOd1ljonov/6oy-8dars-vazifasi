@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="container mt-4">
+    <h2 class="text-primary">Darsni tahrirlash</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-warning">Yangilash</button>
+    </form>
+</div>
+{% endblock main %}
