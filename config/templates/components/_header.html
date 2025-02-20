@@ -4,13 +4,13 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-warning text-white btn-add" href="{% url 'add_course' %}">➕ Kurs Qo'shish</a>
-                    </li>
-
-                </ul>
-            </div>
+            <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+                <a class="nav-link btn btn-warning text-white btn-add" href="{% url 'add_course' %}">➕ Kurs Qo'shish</a>&nbsp;&nbsp;&nbsp;
+                    <div class="d-flex">
+                        <a class="nav-link btn btn-warning text-white btn-add" href="{% url 'user_login' %}">login</a>&nbsp;&nbsp;&nbsp;
+                        <a class="nav-link btn btn-warning text-white btn-add" href="{% url 'user_register' %}">register</a>&nbsp;&nbsp;&nbsp;
+                        <a class="nav-link btn btn-warning text-white btn-add" href="{% url 'user_logout' %}">logout</a>&nbsp;&nbsp;&nbsp;
+                    </div>
+                </div>
         </div>
     </nav>

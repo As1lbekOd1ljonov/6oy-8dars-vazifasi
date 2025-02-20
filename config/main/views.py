@@ -2,6 +2,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Course, Lesson, Comment
 from .form import CourseForm, LessonForm, CommentFrom
 from django.contrib import messages
+from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.models import User
+
 
 def index(request):
     courses = Course.objects.all()
@@ -101,3 +104,39 @@ def delete_comment(request, lesson_id, comment_id):
     else:
 
         return redirect("lesson_detail", lesson_id)
+
+
+def user_login(request):
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            messages.success(request, f"Hush kelibsiz {user.username}!")
+            return redirect('index')
+        else:
+            messages.error(request, "Login yoki parol noto‘g‘ri!")
+
+    return render(request, 'user_login.html')
+
+
+def user_register(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password1 = request.POST.get('password1')
+        password2 = request.POST.get('password2')
+        if password1 == password2:
+            user = User.objects.create_user(username=username, email=email, password=password1)
+            messages.success(request, "Akount muofiqiyatli qo'shildi !\n"
+                                      "Iltimos login qiling !")
+        return redirect("user_login")
+    return render(request, 'register.html')
+
+def user_logout(request):
+    logout(request)
+    messages.warning(request, "Siz akoutni tark etingiz !")
+    return redirect("user_login")
+

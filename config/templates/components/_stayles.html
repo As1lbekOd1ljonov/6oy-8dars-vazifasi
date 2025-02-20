@@ -14,10 +14,16 @@
 />
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdb-ui-kit@8.2.0/css/mdb.min.css">
 
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.2.0/mdb.min.css"
+/>
+
 
 
 <style>
-  body {
+    /* Umumiy stillar */
+body {
     background-color: #0d0d0d;
     color: #fff;
     font-family: 'Roboto', sans-serif;
@@ -49,9 +55,33 @@
     color: #fff !important;
 }
 
-/* Kurs tugmalari */
-button {
-    background-color: #00ff99;
+/* Login paneli */
+.left-panel {
+    background-color: #111;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
+}
+
+/* Forma ichidagi input va label */
+.form-outline input {
+    background-color: #222;
+    border: 1px solid #00ff99;
+    color: #fff;
+}
+
+.form-outline input::placeholder {
+    color: #ccc;
+}
+
+.form-outline label {
+    color: #00ff99;
+    font-weight: bold;
+}
+
+/* Login tugmasi */
+.btn-primary {
+    background-color: #00ff99 !important;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -61,12 +91,24 @@ button {
     transition: 0.3s;
 }
 
-button:hover {
-    background-color: #00cc77;
+.btn-primary:hover {
+    background-color: #00cc77 !important;
     color: #fff;
 }
 
-/* Kurs ro‘yxati */
+/* "Create new" tugmasi */
+.btn-outline-danger {
+    border: 1px solid #00ff99 !important;
+    color: #00ff99 !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-danger:hover {
+    background-color: #00ff99 !important;
+    color: #000 !important;
+}
+
+/* Kurslar ro‘yxati */
 .card {
     background-color: #111;
     border: 1px solid #00ff99;
@@ -125,24 +167,92 @@ footer a:hover {
         margin-bottom: 20px;
     }
 }
-/* Brand linklari uchun hover effekti */
+
+/* Justify-content-between */
+.display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Brand linklari */
 .d-flex a {
-    color: #00ff99; /* Asosiy rang */
+    color: #00ff99;
     font-weight: bold;
-    border: 1px solid  #00ff99;
+    border: 1px solid #00ff99;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
-    padding: 15px 50px;
+    padding: 7px 15px;
     border-radius: 5px;
 }
 
 .d-flex a:hover {
-    transform: scale(4);
-    box-shadow: 0 0 15px #00ff99; /* Yorqin yashil shadow effekti */
-    transform: scale(1.1); /* Biroz kattalashish */
+    box-shadow: 0 0 15px #00ff99;
+    transform: scale(1.1);
 }
-                .display{
-            display: flex;
-             justify-content: space-between
-        }
+
+/* Gradient panel */
+.gradient-form {
+    background: linear-gradient(135deg, #0d0d0d, #111, #222);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* Gradient sidebar */
+.gradient-custom-2 {
+    background: linear-gradient(135deg, #00ff99, #00cc77);
+    border-radius: 10px;
+}
+
+/* Forgot password link */
+.text-muted {
+    color: #bbb !important;
+    transition: 0.3s;
+}
+
+.text-muted:hover {
+    color: #fff !important;
+}
+
+
+/* Input maydonlarini oq qilish */
+.form-outline input {
+    background-color: #222; /* Qorong‘i fon */
+    border: 1px solid #00ff99; /* Yashil chegaralar */
+    color: #fff; /* Matn oq rangda */
+}
+
+.form-outline input::placeholder {
+    color: #ddd; /* Placeholder matni oqsimon kul rang */
+}
+
+.form-outline label {
+    color: #fff; /* Label ham oq rangda */
+    font-weight: bold;
+}
+
+/* Inputga fokus (yozilganda) */
+.form-outline input:focus {
+    background-color: #333; /* Biroz yorug‘roq fon */
+    border-color: #00ff99; /* Yashil border */
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.5);
+    color: #fff;
+}
+
+/* Parol ko‘rsatish tugmasi (emoji yonida tursa) */
+.form-outline .password-toggle {
+    color: #fff;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Parol tugmachasi hover qilinganda */
+.form-outline .password-toggle:hover {
+    color: #00ff99;
+}
+
+
+
 </style>
